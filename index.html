@@ -1,115 +1,209 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TTD Gift Gem</title>
+<title>TTD Premium Gift</title>
+
 
 <style>
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", Arial;
 }
+
 
 body{
+
 height:100vh;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
+
 background:
-radial-gradient(circle,#004cff,#050505 70%);
+
+radial-gradient(circle at top,#008cff,#020204 65%);
+
+
 color:white;
+
 }
 
 
-.box{
 
-width:380px;
-padding:30px;
+.card{
 
-background:rgba(255,255,255,.08);
+
+width:420px;
+
+padding:35px;
+
+
+background:
+
+rgba(255,255,255,0.08);
+
+
+border:
+
+1px solid rgba(0,170,255,.5);
+
+
+border-radius:30px;
+
+
 backdrop-filter:blur(20px);
 
-border-radius:25px;
 
-border:1px solid #008cff;
+box-shadow:
 
-box-shadow:0 0 40px #0066ff;
+0 0 50px #008cff;
+
 
 }
 
 
-.title{
+
+.logo{
+
 
 text-align:center;
-font-size:35px;
+
+font-size:42px;
+
 font-weight:900;
 
-color:#00bfff;
 
-text-shadow:0 0 20px #00bfff;
+color:#00c8ff;
+
+
+text-shadow:
+
+0 0 25px #00c8ff;
+
 
 }
 
 
-p{
+
+.subtitle{
+
 text-align:center;
-color:#ccc;
-margin:10px;
+
+color:#bbb;
+
+margin-top:8px;
+
 }
 
 
 
-input,select{
+.input-box{
+
+margin-top:25px;
+
+}
+
+
+
+label{
+
+font-size:14px;
+
+color:#aaa;
+
+}
+
+
+
+input{
+
 
 width:100%;
+
+margin-top:8px;
+
 padding:15px;
 
-margin-top:15px;
 
 border-radius:15px;
 
+
 border:none;
 
-background:#111;
+
+background:#080808;
+
 
 color:white;
 
+
+font-size:17px;
+
+
 outline:none;
 
-font-size:16px;
+
+box-shadow:
+
+inset 0 0 10px #0066ff;
+
 
 }
+
 
 
 
 button{
 
-margin-top:20px;
 
 width:100%;
 
-padding:15px;
+margin-top:25px;
+
+
+padding:16px;
+
 
 border:none;
 
-border-radius:15px;
 
+border-radius:18px;
 
-background:linear-gradient(90deg,#00eaff,#0066ff);
-
-color:white;
-
-font-weight:bold;
 
 font-size:18px;
 
+
+font-weight:bold;
+
+
+color:white;
+
+
+background:
+
+linear-gradient(90deg,#00d4ff,#0066ff);
+
+
 cursor:pointer;
 
-box-shadow:0 0 20px #008cff;
+
+box-shadow:
+
+0 0 25px #008cff;
+
+
+transition:.3s;
+
 
 }
 
@@ -117,33 +211,91 @@ box-shadow:0 0 20px #008cff;
 
 button:hover{
 
+
 transform:scale(1.05);
+
+
+box-shadow:
+
+0 0 45px #00c8ff;
+
 
 }
 
 
 
-#result{
+.result{
+
+
+margin-top:25px;
+
 
 text-align:center;
 
-margin-top:20px;
 
 color:#00ffcc;
 
+
+font-weight:bold;
+
+
 }
+
+
 
 .vip{
 
-text-align:center;
 
 margin-top:20px;
 
+
+text-align:center;
+
+
+font-size:13px;
+
+
 color:#ffd700;
+
+
+letter-spacing:2px;
+
 
 }
 
+
+.gem-icon{
+
+
+text-align:center;
+
+
+font-size:70px;
+
+
+animation:float 2s infinite;
+
+
+}
+
+
+
+@keyframes float{
+
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+
+}
+
+
+
 </style>
+
 
 </head>
 
@@ -151,51 +303,86 @@ color:#ffd700;
 <body>
 
 
-<div class="box">
+
+<div class="card">
 
 
-<div class="title">
-💎 GIFT GEM
+<div class="gem-icon">
+
+💎
+
 </div>
 
 
-<p>
-Toilet Tower Defense Premium Gift
-</p>
+
+<div class="logo">
+
+TTD GIFT
+
+</div>
+
+
+<div class="subtitle">
+
+Premium Gem Transfer System
+
+</div>
 
 
 
-<input id="user"
-placeholder="Nhập tên Roblox người nhận">
+<div class="input-box">
+
+
+<label>
+Receiver Username
+</label>
+
+
+<input id="user" placeholder="Enter Roblox username">
+
+
+</div>
 
 
 
-<select id="gem">
-
-<option>100 Gems</option>
-<option>500 Gems</option>
-<option>1000 Gems</option>
-<option>5000 Gems VIP</option>
-
-</select>
+<div class="input-box">
 
 
+<label>
+Amount of Gems
+</label>
 
-<button onclick="sendGift()">
+
+<input id="amount" type="number" placeholder="Enter gem amount">
+
+
+</div>
+
+
+
+
+<button onclick="send()">
+
 🎁 SEND GIFT
+
 </button>
 
 
 
-<div id="result">
-Waiting...
+<div class="result" id="result">
+
+Waiting for gift...
+
 </div>
 
 
 
 <div class="vip">
-★ VIP GIFT SYSTEM ★
+
+★ PREMIUM VIP EXPERIENCE ★
+
 </div>
+
 
 
 </div>
@@ -205,39 +392,47 @@ Waiting...
 <script>
 
 
-function sendGift(){
+function send(){
 
-let name=document.getElementById("user").value;
 
-let gem=document.getElementById("gem").value;
+let user=document.getElementById("user").value;
+
+let amount=document.getElementById("amount").value;
+
 
 let result=document.getElementById("result");
 
 
-if(name==""){
 
-result.innerHTML="❌ Nhập tên người nhận";
+if(user=="" || amount==""){
+
+result.innerHTML="❌ Please fill all fields";
 
 return;
 
 }
 
 
+
 result.innerHTML=
-"⏳ Đang tạo gift cho "+name+"...";
+"⏳ Creating gift package...";
 
 
 setTimeout(()=>{
 
 
 result.innerHTML=
-"✅ Đã tạo gift: "+gem+" cho "+name;
+
+"✅ Gift created: "+amount+" Gems → "+user;
+
 
 
 },2000);
 
 
+
 }
+
 
 
 </script>
